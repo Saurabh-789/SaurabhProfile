@@ -1,0 +1,24 @@
+<section id="skills" class="default-container top-shadow-effect">
+  <div class="heading-wrapper">
+    <div class="line"></div>
+    <div class="page-heading">SKILLS</div>
+    <div class="line"></div>
+  </div>
+  <div class="carousel-container" (mouseenter)="paused = true" (mouseleave)="paused = false">
+  <div class="carousel-track" [ngClass]="{ paused: paused }">
+    <div class="carousel-items" *ngFor="let img of images">
+      <div class="tech-card">
+        <img [src]="img.src" alt="{{ img.name }}" />
+        <p>{{ img.name }}</p>
+      </div>
+    </div>
+    <!-- Duplicate to achieve seamless scroll -->
+    <div class="carousel-items" *ngFor="let img of images">
+      <div class="tech-card">
+        <img [src]="img.src" alt="{{ img.name }}" />
+        <p>{{ img.name }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

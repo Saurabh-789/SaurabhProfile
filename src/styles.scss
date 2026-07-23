@@ -1,0 +1,220 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.text-pink {
+  color: #ff5f56;
+}
+.text-orange {
+  color: #fb923c;
+}
+.text-gray {
+  color: #9ca3af;
+}
+.text-cyan {
+  color: #22d3ee;
+}
+.text-amber {
+  color: #fcd34d;
+}
+.text-green {
+  color: #27c93f;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: clamp(14px, 1vw + 12px, 18px);
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d1224 !important;
+  background-image: url("/assets/gradient.svg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 767.98px) {
+  body {
+    background-size: auto 120%;
+  }
+
+  .default-container {
+    padding: 2rem 2rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .default-container {
+    padding: 2rem 2rem;
+  }
+
+  body {
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1200px) {
+  .default-container {
+    padding: 3rem 4rem;
+  }
+
+  body {
+    background-position: top center;
+    background-size: 100% 100%;
+  }
+}
+
+.default-container {
+  color: white;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.top-shadow-effect {
+  background-image: url("/assets/shadow-effect.svg");
+  background-repeat: no-repeat;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.a-red {
+  color: #ffffff;
+  font-size: large;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.a-red::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #ff6464;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.a-red:hover::after {
+  width: 100%;
+  left: 0;
+  background: #ff6464;
+}
+
+.a-red:hover,
+.a-red:active {
+  color: #ff6464;
+}
+
+.heading-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem 0rem 4rem 0rem;
+
+  .line {
+    height: 4px;
+    background: #0d1224;
+    width: 10%;
+  }
+
+  .page-heading {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background: #0d1224;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+  }
+}
+
+.coder-box {
+  background: linear-gradient(90deg, #0d1224 25%, #101257 200%);
+  color: #e2e8f0;
+  border: 1px solid #1b1e71;
+  padding: 1rem;
+  font-family: "Fira Code", monospace;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.glow-box {
+  position: relative;
+  padding: 1px;
+  margin: 0rem 1rem;
+}
+
+.glow-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 6px;
+  background: linear-gradient(to right, #1b1e71, #ff4d4d, #ff00ff, #1b1e71);
+  border-radius: 5px;
+  box-shadow: 0 0 30px 1px rgba(255, 0, 255, 0.3);
+}
+
+.mac-header {
+  display: flex;
+  justify-content: space-between; // ensures circles on left, icon (if present) on right
+  align-items: center;
+  // padding: 14px 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mac-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+
+  &.red {
+    background-color: #ff5f56;
+  }
+  &.yellow {
+    background-color: #ffbd2e;
+  }
+  &.green {
+    background-color: #27c93f;
+  }
+}
+
+.close-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.mat-mdc-dialog-surface {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}

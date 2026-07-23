@@ -1,0 +1,111 @@
+<div class="project-details-card">
+  <div class="project-detail">
+    <div class="glow-box"></div>
+    <div class="coder-box rounded-top">
+      <div class="mac-header">
+        <div class="mac-controls">
+          <span class="circle red"></span>
+          <span class="circle yellow"></span>
+          <span class="circle green"></span>
+        </div>
+        <mat-icon class="close-button cursor-pointer" (click)="close()"
+          >close</mat-icon
+        >
+      </div>
+      <div></div>
+    </div>
+    <div class="coder-box rounded-bottom" style="min-height: 335px">
+      <div>
+        <span class="me-2 text-pink">const</span>
+        <span class="me-2">project</span>
+        <span class="me-2 text-pink">=</span>
+        <span class="text-gray">{{ "{" }}</span>
+      </div>
+      <div>
+        <span class="ms-4 mr-2">name: </span>
+        <span class="text-gray">{{ "'" }}</span>
+        <span class="text-orange">{{ project.name }}</span>
+        <span class="text-gray">{{ "'," }}</span>
+      </div>
+      <div>
+        <span class="ms-4 mr-2">role: </span>
+        <span class="text-gray">{{ "'" }}</span>
+        <span class="text-green">{{ project.role }}</span>
+        <span class="text-gray">{{ "'," }}</span>
+      </div>
+      <div>
+        <span class="ms-4 mr-2">duration: </span>
+        <span class="text-gray">{{ "'" }}</span>
+        <span class="text-amber">{{ project.duration }}</span>
+        <span class="text-gray">{{ "'," }}</span>
+      </div>
+      <div class="ms-4 me-2">
+        <span>tools: </span>
+        <span class="text-gray">{{ "['" }}</span>
+        <span *ngFor="let tool of project.tools; let i = index">
+          <span class="text-amber">{{ tool }}</span>
+          <span *ngIf="project.tools.length - 1 != i" class="text-gray">{{
+            "', '"
+          }}</span>
+        </span>
+        <span class="text-gray">{{ "']," }}</span>
+      </div>
+      <div class="ms-4 me-2">
+        <span>overview: </span>
+        <span class="text-gray">{{ "'" }}</span>
+        <span class="text-amber">{{ project.overview }}</span>
+        <span class="text-gray">{{ "'," }}</span>
+      </div>
+      <div class="ms-4 me-2">
+        <span>features: </span>
+        <span class="text-gray">{{ "[" }}</span>
+        <div>
+          <span *ngFor="let feat of project.features; let i = index">
+            <div class="ms-4 me-2">
+              <span class="text-amber">'{{ feat }}'</span>
+              <span
+                *ngIf="project.features.length - 1 != i"
+                class="text-gray"
+                >{{ "," }}</span
+              >
+            </div>
+          </span>
+        </div>
+        <span class="text-gray">{{ "]," }}</span>
+      </div>
+      <div class="ms-4 me-2">
+        <div>
+          <span>contributions: </span>
+          <span class="text-gray">{{ "{" }}</span>
+          <div>
+            <span
+              *ngFor="let contribution of project.contributions; let i = index"
+            >
+              <div class="ms-4 me-2">
+                <span>{{ contribution.key }} : </span>
+                <span class="text-amber">'{{ contribution.value }}'</span>
+                <span
+                  *ngIf="project.contributions.length - 1 != i"
+                  class="text-gray"
+                  >{{ ", " }}</span
+                >
+              </div>
+            </span>
+          </div>
+          <div>
+            <span class="text-gray">{{ "}," }}</span>
+          </div>
+        </div>
+        <div>
+          <span>impact: </span>
+          <span class="text-gray">{{ "'" }}</span>
+          <span class="text-amber">{{ project.impact }}</span>
+          <span class="text-gray">{{ "'," }}</span>
+        </div>
+      </div>
+      <div>
+        <span class="text-gray">{{ "};" }}</span>
+      </div>
+    </div>
+  </div>
+</div>
